@@ -1,0 +1,35 @@
+
+.demDivs {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+.repubDivs {
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+}
+
+.marlboroDivs {
+  width: 100px;
+  height: 100px;
+  background-color: navy;
+  border-radius: 50%;
+}
+
+.flexMe {
+  width: 500px;
+  display: flex;
+  
+}
+
+.rightPushed{
+  justify-content: flex-end;
+}
+
+.someSpace{
+  justify-content: space-around;
+}

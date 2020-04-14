@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Herr Zapata und Herr Embree-Lowry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camilothomas/project.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Camilo Embree-Lowry and Emmanuel Zapata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camilothomas/project/issues"
+  },
+  "homepage": "https://github.com/camilothomas/project#readme"
+}
