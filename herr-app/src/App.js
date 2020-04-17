@@ -1,19 +1,28 @@
 import React from 'react';
-import './App.css';
-import Blob from "./Blob";
+import styled from 'styled-components';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Blob } from './components';
 import GoldenRectangle from './GoldenRectangle';
 import Circle from './Circle';
 
-const BLOB_CLASSES = ['repubDivs', 'demDivs', 'marlboroDivs'];
+const BLOB_COLORS = ['aqua', 'navy', 'rebeccapurple'];
+
+const FlexDiv = styled.div`
+    width: 500px;
+    display: flex;
+    background-color: ${props => props.blobColor};
+    justify-content: ${props => props.jc};
+`;
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             colorOrder: {
-                first: "repubDivs",
-                second: "demDivs",
-                third: "repubDivs",
+                first: 'aqua',
+                second: 'navy',
+                third: 'rebeccapurple',
             }
         };
     }
@@ -22,31 +31,29 @@ class App extends React.Component {
         this.setState(
             {
                 colorOrder: {
-                    first: BLOB_CLASSES[Math.floor(Math.random() * 3)],
-                    second: BLOB_CLASSES[Math.floor(Math.random() * 3)],
-                    third: BLOB_CLASSES[Math.floor(Math.random() * 3)],
+                    first: BLOB_COLORS[Math.floor(Math.random() * 3)],
+                    second: BLOB_COLORS[Math.floor(Math.random() * 3)],
+                    third: BLOB_COLORS[Math.floor(Math.random() * 3)],
                 }
             }
         );
-        console.log('don\'t think I\'ll see you');
     }
 
     render() {
         return (
-            <>
-                <div className="flexMe someSpace">
-                    <Blob className={this.state.colorOrder.first} onClick={this.handleBs} />
-                    <Blob className={this.state.colorOrder.second} onClick={this.handleBs} />
-                    <Blob className={this.state.colorOrder.third} onClick={this.handleBs} />
-                </div>
+            <div>
+                <FlexDiv jc="space-around">
+                    <Blob blobColor={this.state.colorOrder.first} onClick={this.handleBs} />
+                    <Blob blobColor={this.state.colorOrder.second} onClick={this.handleBs} />
+                    <Blob blobColor={this.state.colorOrder.third} onClick={this.handleBs} />
+                </FlexDiv>
                 <GoldenRectangle onClick={this.handleBs} />
-                <div className="flexMe rightPushed">
+                <FlexDiv jc="flex-end">
                     <Circle onClick={this.handleBs} />
                     <Circle onClick={this.handleBs} />
                     <Circle onClick={this.handleBs} />
-                </div>
-            </>
-
+                </FlexDiv>
+            </div>
         );
     }
 
