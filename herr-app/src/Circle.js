@@ -1,7 +1,15 @@
 import React from 'react';
-import './Circle.css';
+import styled from 'styled-components';
 
-function Circle(props) {
-    return (<div className="circle" onClick={props.onClick}></div>);
-}
+const CircleDiv = styled.div`
+    width: 100px;
+    height: 100px;
+    background-color: rgb(60, 255, 0);
+    border-radius: 50%;
+`;
+
+const Circle = props => (
+    <CircleDiv onClick={props.onClick}/>
+);
+
 export default Circle;
