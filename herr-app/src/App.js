@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+//import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Blob } from './components';
 import GoldenRectangle from './GoldenRectangle';
 import Circle from './Circle';
@@ -10,7 +10,6 @@ const BLOB_COLORS = ['aqua', 'navy', 'rebeccapurple'];
 const FlexDiv = styled.div`
     width: 500px;
     display: flex;
-    background-color: ${props => props.blobColor};
     justify-content: ${props => props.jc};
 `;
 
