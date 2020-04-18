@@ -7,6 +7,11 @@ import Circle from './Circle';
 
 const BLOB_COLORS = ['aqua', 'navy', 'rebeccapurple'];
 
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+`;
+
 const FlexDiv = styled.div`
     width: 500px;
     display: flex;
@@ -41,7 +46,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <Grid>
                 <FlexDiv jc="space-around">
                     <Blob blobColor={this.state.colorOrder.first} onClick={this.handleBs} />
                     <Blob blobColor={this.state.colorOrder.second} onClick={this.handleBs} />
@@ -53,7 +58,13 @@ class App extends React.Component {
                     <Circle onClick={this.handleBs} />
                     <Circle onClick={this.handleBs} />
                 </FlexDiv>
-            </div>
+                <div></div>
+                <FlexDiv jc="flex-end">
+                    <Circle onClick={this.handleBs} />
+                    <Circle onClick={this.handleBs} />
+                    <Circle onClick={this.handleBs} />
+                </FlexDiv>
+            </Grid>
         );
     }
 
