@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Blob } from './components';
-import GoldenRectangle from './GoldenRectangle';
-import Circle from './Circle';
+import React from "react";
+import styled from "styled-components";
+//import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Blob } from "./components";
+import { GoldenRectangle } from "./components";
+import { Circle } from "./components";
 
-const BLOB_COLORS = ['aqua', 'navy', 'rebeccapurple'];
+const BLOB_COLORS = ["aqua", "navy", "rebeccapurple"];
 
 const Grid = styled.div`
     display: grid;
@@ -13,37 +13,33 @@ const Grid = styled.div`
 `;
 
 const FlexDiv = styled.div`
-    width: 500px;
-    display: flex;
-    background-color: ${props => props.blobColor};
-    justify-content: ${props => props.jc};
+  width: 500px;
+  display: flex;
+  justify-content: ${(props) => props.jc};
 `;
 
-
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            colorOrder: {
-                first: 'aqua',
-                second: 'navy',
-                third: 'rebeccapurple',
-            }
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      colorOrder: {
+        first: "aqua",
+        second: "navy",
+        third: "rebeccapurple",
+      },
+    };
+  }
 
-    handleBs = () => {
-        this.setState(
-            {
-                colorOrder: {
-                    first: BLOB_COLORS[Math.floor(Math.random() * 3)],
-                    second: BLOB_COLORS[Math.floor(Math.random() * 3)],
-                    third: BLOB_COLORS[Math.floor(Math.random() * 3)],
-                }
-            }
-        );
-    }
-
+  handleBs = () => {
+    this.setState({
+      colorOrder: {
+        first: BLOB_COLORS[Math.floor(Math.random() * 3)],
+        second: BLOB_COLORS[Math.floor(Math.random() * 3)],
+        third: BLOB_COLORS[Math.floor(Math.random() * 3)],
+      },
+    });
+  };
+  
     render() {
         return (
             <Grid>

@@ -9,7 +9,7 @@ const BlobDiv = styled.div`
 `;
 
 const Blob = props => (
-    <BlobDiv blobColor={props.blobColor} onClick={props.onClick}/>
+    <BlobDiv blobColor={props.blobColor} onClick={props.onClick} />
 );
 
 export default Blob;
