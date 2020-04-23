@@ -8,6 +8,7 @@ const CircleDiv = styled.div`
     border-radius: 50%;
 `;
 
+
 const Circle = props => (
     <CircleDiv onClick={props.onClick}/>
 );
