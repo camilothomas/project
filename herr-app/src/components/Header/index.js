@@ -5,7 +5,6 @@ const Title = styled.h1`
     
 `;
 
-
 const HeaderDiv = styled.div`
     color: white;
     display: flex;
