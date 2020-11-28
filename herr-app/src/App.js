@@ -64,8 +64,6 @@ class App extends React.Component {
         fourth: (event.target.value.length >= 4),
       },
     });
-    // console.log(event.target.value);
-    // console.log(event.target.value.length);
   };
 
   
