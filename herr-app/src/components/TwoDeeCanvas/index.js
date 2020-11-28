@@ -31,33 +31,21 @@ class TwoDeeCanvas extends React.Component {
         } else {
             img = this.refs.image;
         }
-        //console.log('in 2d canvas');
         if (this.props.amBlack) {
-            ctx.fillStyle = "#FF0000";
+            ctx.fillStyle = '#EF6C00';
             ctx.fillRect(0, 0, 250, 250);
         } else {
-            //console.log('xyz');
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, 250, 250);
             ctx.drawImage(img, 0, 0, 250, 250)
-            ctx.font = "40px Courier"
+            ctx.font = '40px Courier'
             ctx.fillText("Nachbarn", 0, 0)
         }
-        //const img = this.refs.image;
         img.onload = () => {
                 ctx.drawImage(img, 0, 0, 250, 250)
                 ctx.font = "40px Courier"
                 ctx.fillText("Nachbarn", 0, 0)
         }
-          
-        //ctx.fillStyle = '#000000';
-        //ctx.fillRect(0,0, 100, 100);
-        //ctx.drawImage(zeus, 0, 0);
-        /*ctx.fillStyle = 'rgb(125, 125, 25)';
-        ctx.beginPath();
-        ctx.moveTo(w/2-a/2, 0);
-        ctx.lineTo(w/2+a/2, 0);
-        ctx.lineTo(w/2, adjTriHeight);
-        ctx.lineTo(w/2-a/2, 0);
-        ctx.fill();*/
     }
 
     componentDidMount() {
